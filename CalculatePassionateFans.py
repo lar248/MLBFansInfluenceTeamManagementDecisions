@@ -27,6 +27,19 @@ class StdOutListener(StreamListener):
     def on_error(self, status):
         print status
 
+    def parseTwitterHandles(self, fileToReadFrom, fileToWriteTo):
+        f = open(fileToReadFrom, 'r')
+
+        with open(fileToWriteTo, 'w') as x:
+            for line in iter(f):
+                index = line.find("@")
+                if index != -1:
+                    x.write(line[index+1:])
+                else:
+                    x.write(line)
+
+        f.close()
+
 
 if __name__ == '__main__':
 
@@ -46,12 +59,14 @@ if __name__ == '__main__':
 
 
     #this link: http://stackoverflow.com/questions/29635706/how-to-get-twitter-followers-list
-    list= open('twitter_followers.txt','w')
+    list= open('twitter_followers_jasonheyward.txt','w')
+
+    parseTwitterHandles('twitter_followers_jasonheyward.txt', 'twitter_followers_Jason_Heyward.txt')
 
     if(api.verify_credentials):
         print 'We successfully logged in'
 
-    user = Cursor(api.followers, screen_name="ynscspds").items()
+    user = Cursor(api.followers, screen_name="jasonheyward").items()
 
     while True:
         try:
@@ -60,7 +75,7 @@ if __name__ == '__main__':
             list.write(u.screen_name +' \n')
 
         except:
-            time.sleep(15*60)
+            # time.sleep(15*60)
             print 'We got a timeout ... Sleeping for 15 minutes'
             u = next(user)
             list.write(u.screen_name +' \n')
