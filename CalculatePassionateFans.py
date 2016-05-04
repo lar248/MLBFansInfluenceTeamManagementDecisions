@@ -29,7 +29,7 @@ class StdOutListener(StreamListener):
 
 
 if __name__ == '__main__':
-
+    #test 
     #This handles Twitter authetification and the connection to Twitter Streaming API
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
