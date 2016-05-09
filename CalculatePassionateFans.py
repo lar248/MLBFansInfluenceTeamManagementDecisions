@@ -11,10 +11,10 @@ from tweepy import API
 import time
 
 #Variables that contains the user credentials to access Twitter API
-access_token = "3300938639-wOqh3kNzoq7XQfHDS4g7ywLO16fh5IryeypOotd"
-access_token_secret = "QlF4awsLV55FodGrtSUiEgHd9t6MswBcafE4AURO177SR"
-consumer_key = "lFV1kFxvXac4yQUV0gqAZC78t"
-consumer_secret = "XOsojLuqrKk1MhwJB5uTLWVKwRKmcBx3RR9vFFmSztjJCTPwJo"
+access_token = "aaa"
+access_token_secret = "bbb"
+consumer_key = "ccc"
+consumer_secret = "ddd"
 
 
 #This is a basic listener that just prints received tweets to stdout.
